@@ -19,11 +19,11 @@ let clickCount = 0; // 记录点击 No 的次数
 
 // No 按钮的文字变化
 const noTexts = [
-  "？你认真的吗…",
-  "要不再想想？",
-  "不许选这个！ ",
-  "我会很伤心…",
-  "不行:(",
+  "我覺得你是",
+  "你真的是",
+  "你再想想看...",
+  "你是拉",
+  "不行不是這個",
 ];
 
 // No 按钮点击事件
@@ -47,17 +47,10 @@ noButton.addEventListener("click", function () {
   if (clickCount <= 5) {
     noButton.innerText = noTexts[clickCount - 1];
   }
-
-  // 图片变化（前 5 次变化）
-  if (clickCount === 1) mainImage.src = "images/shocked.png"; // 震惊
-  if (clickCount === 2) mainImage.src = "images/think.png"; // 思考
-  if (clickCount === 3) mainImage.src = "images/angry.png"; // 生气
-  if (clickCount === 4) mainImage.src = "images/crying.png"; // 哭
-  if (clickCount >= 5) mainImage.src = "images/crying.png"; // 之后一直是哭
 });
 
 // Yes 按钮点击后，进入表白成功页面
-const loveTest = `!!!喜欢你!! ( >᎑<)♡︎ᐝ  ${
+const loveTest = `我就知道你是 ${
   username ? `${safeUsername}  ♡︎ᐝ(>᎑< )` : ""
 }`;
 
@@ -66,7 +59,7 @@ yesButton.addEventListener("click", function () {
   document.body.innerHTML = `
         <div class="yes-screen">
             <h1 class="yes-text"></h1>
-            <img src="images/hug.png" alt="拥抱" class="yes-image">
+            <img src="images/LGBT-flag.png" alt="LGBT-flag" class="yes-image">
         </div>
     `;
 
